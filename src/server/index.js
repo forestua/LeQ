@@ -15,7 +15,7 @@ server.use(bodyParser.urlencoded({
 
 server.use(bodyParser.json());
 
-server.get('/api/getUsername', (req, res) => {
+server.get('/', (req, res) => {
     res.send({ username: os.userInfo().username });
 });
 
@@ -25,4 +25,4 @@ server.use((req, res, next) => {
     next(err);
   });
 
-server.listen(8080, () => console.log('Listening on port 8080'));
+server.listen(3000, () => console.log('Listening on port 8080'));
